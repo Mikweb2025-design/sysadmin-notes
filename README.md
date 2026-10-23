@@ -1,0 +1,96 @@
+# sysadmin-notes
+
+Practical notes from running mail servers, Nextcloud, DNS and Linux hosts. Short, copy-paste friendly, and tested in real operation.
+
+- **50 error messages** with causes, checks and fixes (SMTP, DNS, Nextcloud, nginx, PHP, TLS …)
+- **4 cheat sheets** with copyable commands
+- **31 server ports** and what runs on them
+- **64 glossary terms**
+
+Everything here is generated from the data behind [daniele-michelin.com](https://daniele-michelin.com/en/), where each entry has a longer page, related guides and free tools (SPF lookup counter, DMARC generator, TLS and header checks, error explainer). German and Italian versions live there too.
+
+## Cheat sheets
+
+- [Nextcloud occ cheat sheet](cheat-sheets/nextcloud-occ-cheat-sheet.md) (35 commands)
+- [dig cheat sheet](cheat-sheets/dig-cheat-sheet.md) (30 commands)
+- [journalctl cheat sheet](cheat-sheets/journalctl-cheat-sheet.md) (31 commands)
+- [OpenSSL cheat sheet](cheat-sheets/openssl-cheat-sheet.md) (33 commands)
+
+## Reference
+
+- [Server ports](ports.md)
+- [Glossary](glossary.md)
+
+## Error messages
+
+| Code | Meaning |
+|---|---|
+| [CNAME at apex](errors/dns-cname-at-zone-apex-not-allowed.md) | A CNAME may not coexist with other records of the same name |
+| [NXDOMAIN](errors/dns-nxdomain-dns-probe-finished-nxdomain.md) | The responsible name server answered authoritatively that this name does not exist |
+| [SERVFAIL](errors/dns-servfail-dnssec.md) | The resolver could not produce a valid answer – either the authoritative nameservers are not answering correctly or DNSSEC validation fails |
+| [400](errors/http-400-request-header-or-cookie-too-large.md) | A single request header or the cookie line is larger than the buffer nginx reserves for it |
+| [403](errors/http-403-forbidden-nginx.md) | nginx understands the request but refuses access |
+| [413](errors/http-413-request-entity-too-large.md) | The request body (usually an upload) is larger than the limit nginx or a proxy in front of it allows – the request never reaches the application |
+| [500](errors/http-500-internal-server-error-php.md) | The application or web server failed while handling the request |
+| [502](errors/http-502-bad-gateway.md) | nginx could not get a valid response from the upstream (PHP-FPM, Node.js, Gunicorn, a Docker container) – the backend is down, unreachable or crashed |
+| [503](errors/http-503-service-unavailable-nginx.md) | The service is temporarily unavailable |
+| [504](errors/http-504-gateway-timeout.md) | nginx reached the backend but did not get a response within the configured timeout (60 seconds by default) |
+| [EMFILE](errors/linux-too-many-open-files.md) | A process hit its file descriptor limit |
+| [ENOSPC](errors/linux-no-space-left-on-device.md) | The kernel returns ENOSPC because a filesystem resource is exhausted – not necessarily disk space, often the inodes or space held by deleted files that are still open |
+| [EROFS](errors/linux-read-only-file-system.md) | A write was refused because the filesystem is read-only |
+| [Out of memory](errors/linux-out-of-memory-killed-process-oom-killer.md) | The system or a cgroup ran out of memory |
+| [Permission denied (publickey)](errors/ssh-permission-denied-publickey.md) | The server only allows key login and accepted none of the keys offered |
+| [control process exited](errors/systemd-job-failed-control-process-exited-with-error-code.md) | systemd tried to start or reload the service and the start command (ExecStart or ExecStartPre) exited with an error |
+| [423 Locked](errors/nextcloud-file-is-locked-423.md) | Nextcloud refuses access because a lock still exists for the file in transactional file locking – usually a stale lock after an aborted upload or crash |
+| [APCu not available](errors/nextcloud-memcache-apcu-not-available-for-local-cache.md) | Nextcloud is configured to use APCu as local cache, but the PHP instance currently running has APCu disabled |
+| [CSRF check failed](errors/nextcloud-csrf-check-failed.md) | The CSRF token in the form does not match the session on the server |
+| [Internal Server Error](errors/nextcloud-internal-server-error-request-id.md) | Nextcloud hit an error while handling the request |
+| [Last background job](errors/nextcloud-last-background-job-ran-ago-cron.md) | Nextcloud handles cleanup, notifications, file versions and trash via background jobs |
+| [data directory readable](errors/nextcloud-data-directory-readable-by-other-users.md) | On start Nextcloud checks whether other system users can read or list the data directory |
+| [maintenance mode](errors/nextcloud-maintenance-mode-enabled.md) | Nextcloud is in maintenance mode and blocks the web UI, clients and most occ commands – either set on purpose or left behind by an update that did not finish cleanly |
+| [missing indexes](errors/nextcloud-database-is-missing-some-indexes.md) | After an update Nextcloud defined new indexes but did not create them automatically, because that can take long on large tables |
+| [untrusted domain](errors/nextcloud-trusted-domain-error.md) | Nextcloud was opened via a hostname or IP that is not listed in `trusted_domains`, so it refuses to log you in |
+| [111: Connection refused](errors/nginx-connect-failed-111-connection-refused-upstream.md) | nginx reaches the backend host, but nothing listens on the target port |
+| [Primary script unknown](errors/nginx-php-fpm-primary-script-unknown-file-not-found.md) | nginx passes the request to PHP-FPM, but PHP-FPM finds no file at the given path or may not read it |
+| [too big header](errors/nginx-upstream-sent-too-big-header.md) | The backend's response headers (usually cookies) are larger than the buffer nginx reserves for them; nginx gives up and returns 502 Bad Gateway |
+| [421 4.7.0](errors/smtp-421-4-7-0.md) | The receiving server temporarily refuses more mail from your IP because volume, reputation or authentication look suspicious – messages stay in the queue and are retried later |
+| [451 4.7.1](errors/smtp-451-4-7-1-greylisting.md) | The receiver deliberately rejects the first delivery attempt from an unknown sender; a properly working mail server retries after a few minutes and gets through |
+| [530 5.7.0](errors/smtp-530-5-7-0-must-issue-starttls.md) | On this port the server accepts neither AUTH nor MAIL FROM over an unencrypted connection |
+| [535 5.7.8](errors/smtp-535-5-7-8-authentication-failed.md) | The server rejected the SMTP AUTH login |
+| [550 5.1.1](errors/smtp-550-5-1-1-user-unknown.md) | The target server does not know the recipient address and rejects the message permanently |
+| [550 5.7.1](errors/smtp-550-5-7-1.md) | The server rejects the message for policy reasons – usually because the sender is not authenticated and the server would have to relay mail to a domain it is not responsible for |
+| [550 5.7.26](errors/smtp-550-5-7-26.md) | Gmail (and Microsoft with 5.7.509/5.7.515) rejects the message because it is not authenticated via SPF or DKIM in alignment with the From domain |
+| [552 5.2.2](errors/smtp-552-5-2-2-mailbox-full.md) | The receiving server refuses the message because the recipient's mailbox has hit its quota |
+| [553 5.7.1](errors/smtp-553-5-7-1-sender-address-rejected.md) | Postfix compares the sender address (MAIL FROM) with the authenticated SASL user |
+| [554 5.7.1](errors/smtp-554-5-7-1.md) | The receiver permanently rejects the connection or message because the sending IP is on a DNS blocklist (DNSBL) or the content was classified as spam |
+| [auth failed](errors/dovecot-imap-login-disconnected-auth-failed.md) | A client logged in to IMAP or POP3 and was refused |
+| [does not resolve to address](errors/postfix-hostname-does-not-resolve-to-address.md) | Postfix found a name for the connecting server's IP via PTR, but that name does not point back to the same IP |
+| [NotBefore](errors/saml-clock-skew-notbefore-timestamp-not-yet-valid.md) | Every SAML assertion is only valid within a time window (NotBefore to NotOnOrAfter) |
+| [SAML signature](errors/nextcloud-saml-signature-validation-failed.md) | Nextcloud (user_saml with php-saml) could not verify the SAML response signature with the stored IdP certificate and rejects the login |
+| [invalid_grant](errors/oidc-invalid-grant-token-endpoint.md) | The identity provider rejects the authorization code or refresh token the client wants to exchange |
+| [redirect_uri_mismatch](errors/oidc-redirect-uri-mismatch-invalid-redirect-uri.md) | In the authorize request the client sends a redirect_uri that is not registered exactly like that at the identity provider |
+| [ERR_CERT_COMMON_NAME_INVALID](errors/net-err-cert-common-name-invalid.md) | The certificate is valid but not issued for this name |
+| [SSL_ERROR_RX_RECORD_TOO_LONG](errors/ssl-error-rx-record-too-long.md) | The browser expects a TLS handshake on port 443 but receives plain text, usually an HTTP response |
+| [acme:error:unauthorized](errors/letsencrypt-acme-error-unauthorized.md) | Let's Encrypt could not fetch the challenge file under `/.well-known/acme-challenge/` from the right server and therefore refuses to issue the certificate |
+| [certificate has expired](errors/ssl-certificate-has-expired.md) | The served certificate is outside its validity period |
+| [rateLimited](errors/letsencrypt-too-many-certificates-already-issued.md) | Let's Encrypt limits how many certificates are issued in a time window |
+| [unable to get local issuer certificate](errors/ssl-unable-to-get-local-issuer-certificate.md) | The client cannot build the chain from the server certificate to a trusted root CA |
+
+## Free tools
+
+- [SPF lookup limit checker](https://daniele-michelin.com/en/tools/spf-lookup-checker/)
+- [Certificate check](https://daniele-michelin.com/en/tools/ssl-certificate-checker/)
+- [Error explainer](https://daniele-michelin.com/en/tools/explain-error-message/)
+- [Mail DNS check](https://daniele-michelin.com/en/tools/mail-dns-checker/)
+
+Badges for your own README (live, refreshed every 6 hours):
+
+```markdown
+![SPF](https://daniele-michelin.com/tools/api/badge.php?d=example.com)
+![TLS](https://daniele-michelin.com/tools/api/badge.php?t=tls&d=example.com)
+![headers](https://daniele-michelin.com/tools/api/badge.php?t=headers&d=example.com)
+```
+
+## License
+
+Text under [CC BY 4.0](LICENSE): share and adapt it, just credit [Daniele Michelin](https://daniele-michelin.com/en/about/) and link back.
