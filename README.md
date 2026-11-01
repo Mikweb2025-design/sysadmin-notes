@@ -2,7 +2,7 @@
 
 Practical notes from running mail servers, Nextcloud, DNS and Linux hosts. Short, copy-paste friendly, and tested in real operation.
 
-- **116 error messages** with causes, checks and fixes (SMTP, DNS, Nextcloud, nginx, PHP, TLS …)
+- **136 error messages** with causes, checks and fixes (SMTP, DNS, Nextcloud, nginx, PHP, TLS …)
 - **8 cheat sheets** with copyable commands
 - **31 server ports** and what runs on them
 - **64 glossary terms**
@@ -42,6 +42,26 @@ Everything here is generated from the data behind [daniele-michelin.com](https:/
 | [connection timed out; no servers could be reached](errors/dig-connection-timed-out-no-servers-could-be-reached.md) | The query got no answer at all, not even a refusal |
 | [curl: (6) Could not resolve host](errors/curl-6-could-not-resolve-host.md) | curl could not turn the host name into an IP address, so it never tried to connect |
 | [status: REFUSED](errors/dns-status-refused-query-refused.md) | The server was reached and answered on purpose with “no” |
+| [DNS](errors/change-dns-server.md) | DNS turns names like example.com into addresses |
+| [Doppel-NAT](errors/two-routers-double-nat.md) | When one router sits behind another, each translates the addresses once |
+| [Drucker](errors/network-printer-not-found.md) | The printer is on, but your PC, Mac or phone cannot find it |
+| [FRITZ!Box](errors/fritzbox-forgot-password.md) | You can open the login page but no longer know the password |
+| [Fernzugriff](errors/reach-home-nas-from-outside.md) | You only get into the home network from outside if the router allows it |
+| [Gastnetz](errors/set-up-guest-wifi-network.md) | A guest network gives visitors internet but keeps them apart from your home network |
+| [Gateway](errors/find-ip-address-gateway.md) | In a home network the gateway is almost always the router |
+| [Kein Internet](errors/fritzbox-no-internet.md) | Wi-Fi works but nothing reaches the internet |
+| [Kein Internet](errors/wifi-connected-no-internet.md) | The device is connected to the router, but websites and apps do not load |
+| [Portfreigabe](errors/port-forwarding-not-working.md) | A port forward sends requests from the internet to a device in your home network |
+| [Repeater/Mesh](errors/wifi-repeater-or-mesh.md) | If Wi-Fi does not reach every room, there are several ways to fix it |
+| [Router](errors/restart-router-correctly.md) | A restart clears many small faults: stuck connections, a full connection table or a lost dial-in |
+| [Smart-TV](errors/smart-tv-chromecast-wont-connect.md) | Streaming from phone to TV only works when both are on the same local network |
+| [Speedtest](errors/speed-test-too-slow.md) | The contract speed is what the line delivers up to the router |
+| [WLAN](errors/wifi-slow.md) | Your device is connected to Wi-Fi but everything feels sluggish |
+| [WLAN-Abbruch](errors/wifi-keeps-disconnecting.md) | The connection is up, drops for a moment and comes back |
+| [WLAN-Kanal](errors/change-wifi-channel-2-4-vs-5-ghz.md) | Many Wi-Fi problems come from networks interfering with each other |
+| [WLAN-Kennwort](errors/fritzbox-wifi-password-find-change.md) | The Wi-Fi password (network key) is printed on the box label from the factory |
+| [Werkseinstellungen](errors/fritzbox-factory-reset.md) | A reset deletes all your own settings |
+| [fritz.box öffnet nicht](errors/fritzbox-not-reachable.md) | The name fritz.box only works inside your home network and needs a working link to the box |
 | [400](errors/http-400-request-header-or-cookie-too-large.md) | A single request header or the cookie line is larger than the buffer nginx reserves for it |
 | [403](errors/http-403-forbidden-nginx.md) | nginx understands the request but refuses access |
 | [404 Not Found](errors/http-404-not-found-nginx.md) | nginx looked for a file at the path it built from `root` or `alias` and the request URI, and did not find it |
