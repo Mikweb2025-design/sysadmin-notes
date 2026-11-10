@@ -26,6 +26,8 @@ Everything here is generated from the data behind [daniele-michelin.com](https:/
 - [Glossary](glossary.md)
 - [Versions and end of support](https://daniele-michelin.com/en/versions/) — EOL dates for 25 products, updated daily
 - [Error message lexicon](https://daniele-michelin.com/en/errors/) — 149 messages with checks and fixes, in DE/EN/IT
+- [Error messages, decoded (gist)](https://gist.github.com/Mikweb2025-design/3c5cac7a03c994afe8427eebed9aae3b) — same lexicon as one table, easy to share
+- [Supported versions and EOL dates (gist)](https://gist.github.com/Mikweb2025-design/fede2629c967d5780f27c6964866abec) — recommended release per product as a single table
 
 ## Error messages
 
