@@ -24,6 +24,8 @@ Everything here is generated from the data behind [daniele-michelin.com](https:/
 
 - [Server ports](ports.md)
 - [Glossary](glossary.md)
+- [Versions and end of support](https://daniele-michelin.com/en/versions/) — EOL dates for 25 products, updated daily
+- [Error message lexicon](https://daniele-michelin.com/en/errors/) — 149 messages with checks and fixes, in DE/EN/IT
 
 ## Error messages
 
