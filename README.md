@@ -2,7 +2,7 @@
 
 Practical notes from running mail servers, Nextcloud, DNS and Linux hosts. Short, copy-paste friendly, and tested in real operation.
 
-- **136 error messages** with causes, checks and fixes (SMTP, DNS, Nextcloud, nginx, PHP, TLS …)
+- **149 error messages** with causes, checks and fixes (SMTP, DNS, Nextcloud, nginx, PHP, TLS …)
 - **8 cheat sheets** with copyable commands
 - **31 server ports** and what runs on them
 - **64 glossary terms**
@@ -31,10 +31,15 @@ Everything here is generated from the data behind [daniele-michelin.com](https:/
 |---|---|
 | [ERROR 1040 (08004): Too many connections](errors/mysql-error-1040-too-many-connections.md) | The server has reached `max_connections` and rejects every new client |
 | [ERROR 1045 (28000)](errors/mysql-1045-access-denied.md) | The server was reached, but it rejects the login: wrong password, a user that does not exist for this host, or an authentication plugin that does not allow a password |
+| [ERROR 1064 (42000)](errors/mysql-1064-syntax-error.md) | The server did not understand the statement: the SQL is not valid – often a reserved word used as a column name, MySQL-8-only syntax on MariaDB, or an unescaped quote |
+| [ERROR 1067 (42000)](errors/mysql-1067-invalid-default-value.md) | The server rejects a column default: it is invalid for the type or conflicts with the active `sql_mode`, for example a zero date under `NO_ZERO_DATE` |
 | [ERROR 2002 (HY000)](errors/mysql-error-2002-cant-connect-through-socket.md) | The client looks for the server's Unix socket file and does not find a running server there – usually the database is stopped, or client and server use different socket paths |
+| [ERROR 2003 (HY000)](errors/mysql-2003-cant-connect-10061.md) | The client reached the host but the port refused the connection: the service is not running, listens on `127.0.0.1` only, or a firewall drops the packet |
 | [FATAL: no pg_hba.conf entry for host](errors/postgresql-fatal-no-pg-hba-conf-entry-for-host.md) | The server is reachable, but its access file `pg_hba.conf` has no line that fits this client: address, user, database and SSL mode |
 | [FATAL: password authentication failed for user](errors/postgresql-fatal-password-authentication-failed.md) | The server found a matching `pg_hba.conf` line that asks for a password, and the password was not accepted |
+| [FATAL: sorry, too many clients already](errors/postgres-too-many-clients.md) | PostgreSQL has used every connection slot and refuses new clients until one is freed |
 | [MySQL server has gone away](errors/mysql-server-has-gone-away-2006.md) | The client sent a query on a connection that the server had already closed |
+| [OOM command not allowed when used memory > 'maxmemory'](errors/redis-oom-command-not-allowed.md) | Memory is above `maxmemory` and the `noeviction` policy forbids evicting keys |
 | [Table is marked as crashed and should be repaired](errors/mariadb-table-is-marked-as-crashed-and-should-be-repaired.md) | The table files of a MyISAM or Aria table are inconsistent, usually because the server stopped in the middle of a write |
 | [CNAME at apex](errors/dns-cname-at-zone-apex-not-allowed.md) | A CNAME may not coexist with other records of the same name |
 | [NXDOMAIN](errors/dns-nxdomain-dns-probe-finished-nxdomain.md) | The responsible name server answered authoritatively that this name does not exist |
@@ -75,21 +80,27 @@ Everything here is generated from the data behind [daniele-michelin.com](https:/
 | [Error 521 / 522 (origin unreachable behind CDN)](errors/http-521-522-origin-error-cdn.md) | These codes come from the CDN (for example Cloudflare), not from your server |
 | [Mixed Content: requested an insecure resource](errors/mixed-content-blocked-insecure-resource.md) | The page itself uses HTTPS, but it tries to load a script, stylesheet, font, image or request over plain HTTP |
 | [Argument list too long](errors/bash-argument-list-too-long.md) | The shell replaced `*` with every matching file name, and the list got larger than the kernel allows for one command |
+| [Bind for 0.0.0.0:80 failed: port is already allocated](errors/docker-port-already-allocated.md) | Docker cannot bind the host port because something already holds it: another container, a host service, or a stuck docker-proxy process |
 | [Could not get lock /var/lib/dpkg/lock-frontend](errors/apt-could-not-get-lock-dpkg-lock-frontend.md) | Another process is using the package system right now, most often the automatic updater |
 | [E: Unable to locate package](errors/apt-e-unable-to-locate-package.md) | apt does not find the package in any package list it knows |
 | [EMFILE](errors/linux-too-many-open-files.md) | A process hit its file descriptor limit |
 | [ENOSPC](errors/linux-no-space-left-on-device.md) | The kernel returns ENOSPC because a filesystem resource is exhausted – not necessarily disk space, often the inodes or space held by deleted files that are still open |
 | [EROFS](errors/linux-read-only-file-system.md) | A write was refused because the filesystem is read-only |
+| [NO_PUBKEY – The following signatures couldn't be verified](errors/apt-nopubkey-signature.md) | apt does not know the public key that signed the repository |
 | [Out of memory](errors/linux-out-of-memory-killed-process-oom-killer.md) | The system or a cgroup ran out of memory |
 | [Permission denied (publickey)](errors/ssh-permission-denied-publickey.md) | The server only allows key login and accepted none of the keys offered |
 | [REMOTE HOST IDENTIFICATION HAS CHANGED](errors/ssh-remote-host-identification-has-changed.md) | The server presents a different host key than the one stored in your `known_hosts` |
 | [Temporary failure in name resolution](errors/temporary-failure-in-name-resolution.md) | The program asked the system resolver for an IP address and got no answer at all |
 | [Too many authentication failures](errors/ssh-too-many-authentication-failures.md) | The server counts every key your SSH agent offers as a failed attempt |
 | [control process exited](errors/systemd-job-failed-control-process-exited-with-error-code.md) | systemd tried to start or reload the service and the start command (ExecStart or ExecStartPre) exited with an error |
+| [cron: job is listed but never runs](errors/cron-job-not-running.md) | Cron starts with a minimal environment |
 | [dpkg was interrupted, you must manually run 'dpkg --configure -a'](errors/dpkg-was-interrupted-configure-a.md) | A previous install or upgrade did not finish |
+| [gzip: stdin: unexpected end of file](errors/tar-unexpected-end-of-file.md) | The archive ends in the middle of the data |
 | [is not in the sudoers file. This incident will be reported.](errors/sudo-user-is-not-in-the-sudoers-file.md) | sudo works, but the policy does not allow this user |
 | [permission denied docker.sock](errors/docker-permission-denied-docker-sock.md) | Your user may not use `/var/run/docker.sock` |
 | [port 22: Connection timed out](errors/ssh-connect-to-host-port-22-connection-timed-out.md) | Your packets get no answer at all |
+| [rsync error: some files/attrs were not transferred (code 23)](errors/rsync-code-23-partial-transfer.md) | rsync finished the run but did not copy everything |
+| [ssh: connect to host port 22: Connection refused](errors/ssh-connection-refused-port-22.md) | The packet arrived and was actively rejected: no service listens on that port |
 | [start-limit-hit](errors/systemd-start-request-repeated-too-quickly.md) | The service crashed again and again in a short time, so systemd stopped restarting it to protect the system |
 | [wrong fs type, bad option, bad superblock](errors/mount-wrong-fs-type-bad-option-bad-superblock.md) | mount is a catch-all message |
 | [423 Locked](errors/nextcloud-file-is-locked-423.md) | Nextcloud refuses access because a lock still exists for the file in transactional file locking – usually a stale lock after an aborted upload or crash |
@@ -124,6 +135,7 @@ Everything here is generated from the data behind [daniele-michelin.com](https:/
 | [Call to undefined function mysqli_connect()](errors/php-call-to-undefined-function-mysqli-connect.md) | The PHP that runs your page has no `mysqli` extension loaded |
 | [Cannot modify header information - headers already sent](errors/php-cannot-modify-header-information-headers-already-sent.md) | PHP sends HTTP headers (redirect, cookie, session) only before any body output |
 | [Maximum execution time exceeded](errors/php-maximum-execution-time-exceeded.md) | A PHP script ran longer than `max_execution_time` (30 seconds by default for web requests) and PHP stopped it |
+| [PHP Parse error: syntax error, unexpected token](errors/php-parse-error-unexpected-token.md) | PHP could not compile the file, so it never runs |
 | [The uploaded file exceeds the upload_max_filesize directive in php.ini](errors/php-uploaded-file-exceeds-upload-max-filesize.md) | PHP rejected the upload because the file is larger than `upload_max_filesize`, or the whole request is larger than `post_max_size` |
 | [server reached pm.max_children setting](errors/php-fpm-server-reached-pm-max-children.md) | All PHP workers of the pool are busy |
 | [421 4.7.0](errors/smtp-421-4-7-0.md) | The receiving server temporarily refuses more mail from your IP because volume, reputation or authentication look suspicious – messages stay in the queue and are retried later |
@@ -139,6 +151,7 @@ Everything here is generated from the data behind [daniele-michelin.com](https:/
 | [553 5.7.1](errors/smtp-553-5-7-1-sender-address-rejected.md) | Postfix compares the sender address (MAIL FROM) with the authenticated SASL user |
 | [554 5.7.1](errors/smtp-554-5-7-1.md) | The receiver permanently rejects the connection or message because the sending IP is on a DNS blocklist (DNSBL) or the content was classified as spam |
 | [554 5.7.1 Relay access denied](errors/smtp-554-5-7-1-relay-access-denied.md) | The server is asked to deliver mail to a domain it does not own, from a client it does not trust |
+| [Connection timed out on port 25](errors/smtp-port-25-blocked.md) | Your mail server cannot reach the recipient's MX on port 25 because outbound 25 is blocked |
 | [Dovecot Permission denied](errors/dovecot-mailbox-open-failed-permission-denied.md) | The user Dovecot runs as for this mailbox may not read or write the mail files |
 | [Host or domain name not found](errors/postfix-host-or-domain-name-not-found-name-service-error.md) | Postfix could not look up the recipient domain in DNS |
 | [SASL authentication failed](errors/postfix-sasl-authentication-failed-no-mechanism-available.md) | Postfix tried to log in at your smart host (relay) and failed |
