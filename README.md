@@ -24,10 +24,6 @@ Everything here is generated from the data behind [daniele-michelin.com](https:/
 
 - [Server ports](ports.md)
 - [Glossary](glossary.md)
-- [Versions and end of support](https://daniele-michelin.com/en/versions/) — EOL dates for 25 products, updated daily
-- [Error message lexicon](https://daniele-michelin.com/en/errors/) — 149 messages with checks and fixes, in DE/EN/IT
-- [Error messages, decoded (gist)](https://gist.github.com/Mikweb2025-design/3c5cac7a03c994afe8427eebed9aae3b) — same lexicon as one table, easy to share
-- [Supported versions and EOL dates (gist)](https://gist.github.com/Mikweb2025-design/fede2629c967d5780f27c6964866abec) — recommended release per product as a single table
 
 ## Error messages
 
@@ -205,6 +201,8 @@ The numbers behind the two rankings, measured weekly from public DNS and HTTP he
 - [E-mail security: SPF, DMARC, MTA-STS](https://daniele-michelin.com/data/mail-ranking.csv) (CSV) · [JSON](https://daniele-michelin.com/data/mail-ranking.json)
 - [HTTP security headers: HSTS, CSP, COOP](https://daniele-michelin.com/data/header-ranking.csv) (CSV) · [JSON](https://daniele-michelin.com/data/header-ranking.json)
 - [All open data](https://daniele-michelin.com/en/open-data/) — scan date, column definitions, suggested citation
+
+The same files live in [`data/`](data/) in this repo. Rows: 102 domains (mail), 98 sites (headers), 627 versions (EOL), 149 error messages (lexicon).
 
 ## License
 
