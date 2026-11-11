@@ -198,6 +198,14 @@ Badges for your own README (live, refreshed every 6 hours):
 ![headers](https://daniele-michelin.com/tools/api/badge.php?t=headers&d=example.com)
 ```
 
+## Open data
+
+The numbers behind the two rankings, measured weekly from public DNS and HTTP headers — free to reuse, CC BY 4.0:
+
+- [E-mail security: SPF, DMARC, MTA-STS](https://daniele-michelin.com/data/mail-ranking.csv) (CSV) · [JSON](https://daniele-michelin.com/data/mail-ranking.json)
+- [HTTP security headers: HSTS, CSP, COOP](https://daniele-michelin.com/data/header-ranking.csv) (CSV) · [JSON](https://daniele-michelin.com/data/header-ranking.json)
+- [All open data](https://daniele-michelin.com/en/open-data/) — scan date, column definitions, suggested citation
+
 ## License
 
 Text under [CC BY 4.0](LICENSE): share and adapt it, just credit [Daniele Michelin](https://daniele-michelin.com/en/about/) and link back.
