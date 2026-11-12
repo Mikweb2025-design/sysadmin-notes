@@ -4,8 +4,8 @@
  "url": "https://daniele-michelin.com/en/versions/",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "attribution": "Daniele Michelin, daniele-michelin.com",
- "source": "Public DNS / HTTP headers, measured from outside",
- "scanned": "2026-11-12T12:45:21+00:00",
+ "source": "endoflife.date (MIT licence), checked daily",
+ "scanned": "2026-11-12T14:42:34+00:00",
  "count": 627,
  "columns": [
   {
