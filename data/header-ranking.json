@@ -1,5 +1,5 @@
 {
- "name": "HTTP security header ranking: HSTS, CSP and COOP of 102 sites",
+ "name": "HTTP security header ranking: HSTS, CSP and COOP of 98 sites",
  "description": "Which sites send the security headers that prevent sniffing, framing and injection.",
  "url": "https://daniele-michelin.com/en/header-ranking/",
  "license": "https://creativecommons.org/licenses/by/4.0/",
