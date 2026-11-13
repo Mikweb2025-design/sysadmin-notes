@@ -5,7 +5,7 @@
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "attribution": "Daniele Michelin, daniele-michelin.com",
  "source": "endoflife.date (MIT licence), checked daily",
- "scanned": "2026-11-12T17:53:56+00:00",
+ "scanned": "2026-11-13T12:03:14+00:00",
  "count": 627,
  "columns": [
   {
@@ -4243,8 +4243,8 @@
    "product_name": "Nextcloud",
    "cycle": "33",
    "release_date": "2026-02-18",
-   "latest": "33.0.10",
-   "latest_release": "2026-10-15",
+   "latest": "33.0.11",
+   "latest_release": "2026-11-12",
    "support_end": "",
    "eol": "2027-02-28",
    "lts": false,
@@ -4255,8 +4255,8 @@
    "product_name": "Nextcloud",
    "cycle": "34",
    "release_date": "2026-06-09",
-   "latest": "34.0.5",
-   "latest_release": "2026-10-15",
+   "latest": "34.0.6",
+   "latest_release": "2026-11-12",
    "support_end": "",
    "eol": "2027-06-30",
    "lts": false,
@@ -4267,8 +4267,8 @@
    "product_name": "Nextcloud",
    "cycle": "35",
    "release_date": "2026-09-16",
-   "latest": "35.0.2",
-   "latest_release": "2026-10-15",
+   "latest": "35.0.3",
+   "latest_release": "2026-11-12",
    "support_end": "",
    "eol": "2027-09-30",
    "lts": false,
@@ -5316,7 +5316,7 @@
    "support_end": "",
    "eol": "2026-11-12",
    "lts": false,
-   "status": "soon"
+   "status": "eol"
   },
   {
    "product": "postgresql",
