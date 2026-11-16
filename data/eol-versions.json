@@ -5,7 +5,7 @@
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "attribution": "Daniele Michelin, daniele-michelin.com",
  "source": "endoflife.date (MIT licence), checked daily",
- "scanned": "2026-11-15T14:07:32+00:00",
+ "scanned": "2026-11-16T19:00:33+00:00",
  "count": 627,
  "columns": [
   {
@@ -991,8 +991,8 @@
    "product_name": "Docker Engine",
    "cycle": "29",
    "release_date": "2025-11-10",
-   "latest": "29.9.3",
-   "latest_release": "2026-11-03",
+   "latest": "29.10.0",
+   "latest_release": "2026-11-13",
    "support_end": "",
    "eol": "",
    "lts": false,

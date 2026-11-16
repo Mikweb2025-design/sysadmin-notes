@@ -1,12 +1,12 @@
 {
- "name": "HTTP security header ranking: HSTS, CSP and COOP of 98 sites",
+ "name": "HTTP security header ranking: HSTS, CSP and COOP of 97 sites",
  "description": "Which sites send the security headers that prevent sniffing, framing and injection.",
  "url": "https://daniele-michelin.com/en/header-ranking/",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "attribution": "Daniele Michelin, daniele-michelin.com",
  "source": "Public DNS / HTTP headers, measured from outside",
- "scanned": "2026-11-09T05:30:06+00:00",
- "count": 98,
+ "scanned": "2026-11-16T05:30:16+00:00",
+ "count": 97,
  "columns": [
   {
    "name": "domain",
@@ -153,7 +153,37 @@
    "no_leak": true
   },
   {
+   "domain": "linkedin.com",
+   "category": "social",
+   "score": 90,
+   "grade": "A",
+   "http_code": 200,
+   "hsts": true,
+   "csp": true,
+   "xcto": true,
+   "frame": true,
+   "referrer": false,
+   "permissions": true,
+   "coop": true,
+   "no_leak": true
+  },
+  {
    "domain": "whatsapp.com",
+   "category": "social",
+   "score": 90,
+   "grade": "A",
+   "http_code": 200,
+   "hsts": true,
+   "csp": true,
+   "xcto": true,
+   "frame": true,
+   "referrer": false,
+   "permissions": true,
+   "coop": true,
+   "no_leak": true
+  },
+  {
+   "domain": "youtube.com",
    "category": "social",
    "score": 90,
    "grade": "A",
@@ -483,6 +513,21 @@
    "no_leak": true
   },
   {
+   "domain": "zeit.de",
+   "category": "news",
+   "score": 75,
+   "grade": "B",
+   "http_code": 403,
+   "hsts": true,
+   "csp": true,
+   "xcto": true,
+   "frame": true,
+   "referrer": false,
+   "permissions": false,
+   "coop": false,
+   "no_leak": true
+  },
+  {
    "domain": "bper.it",
    "category": "bank",
    "score": 70,
@@ -618,36 +663,6 @@
    "no_leak": true
   },
   {
-   "domain": "ionos.de",
-   "category": "host",
-   "score": 65,
-   "grade": "C",
-   "http_code": 206,
-   "hsts": true,
-   "csp": true,
-   "xcto": false,
-   "frame": true,
-   "referrer": false,
-   "permissions": false,
-   "coop": false,
-   "no_leak": true
-  },
-  {
-   "domain": "linkedin.com",
-   "category": "social",
-   "score": 65,
-   "grade": "C",
-   "http_code": 200,
-   "hsts": true,
-   "csp": false,
-   "xcto": true,
-   "frame": true,
-   "referrer": false,
-   "permissions": true,
-   "coop": true,
-   "no_leak": true
-  },
-  {
    "domain": "mozilla.org",
    "category": "tech",
    "score": 65,
@@ -704,21 +719,6 @@
    "frame": true,
    "referrer": true,
    "permissions": false,
-   "coop": true,
-   "no_leak": true
-  },
-  {
-   "domain": "youtube.com",
-   "category": "social",
-   "score": 65,
-   "grade": "C",
-   "http_code": 200,
-   "hsts": true,
-   "csp": false,
-   "xcto": true,
-   "frame": true,
-   "referrer": false,
-   "permissions": true,
    "coop": true,
    "no_leak": true
   },
@@ -918,13 +918,13 @@
    "no_leak": true
   },
   {
-   "domain": "zeit.de",
-   "category": "news",
-   "score": 55,
-   "grade": "C",
-   "http_code": 403,
-   "hsts": false,
-   "csp": true,
+   "domain": "agenziaentrate.gov.it",
+   "category": "gov",
+   "score": 50,
+   "grade": "D",
+   "http_code": 200,
+   "hsts": true,
+   "csp": false,
    "xcto": true,
    "frame": true,
    "referrer": false,
@@ -933,8 +933,8 @@
    "no_leak": true
   },
   {
-   "domain": "agenziaentrate.gov.it",
-   "category": "gov",
+   "domain": "anthropic.com",
+   "category": "tech",
    "score": 50,
    "grade": "D",
    "http_code": 200,
@@ -1203,21 +1203,6 @@
    "no_leak": true
   },
   {
-   "domain": "register.it",
-   "category": "host",
-   "score": 40,
-   "grade": "D",
-   "http_code": 200,
-   "hsts": true,
-   "csp": false,
-   "xcto": false,
-   "frame": true,
-   "referrer": false,
-   "permissions": false,
-   "coop": false,
-   "no_leak": true
-  },
-  {
    "domain": "bundesregierung.de",
    "category": "gov",
    "score": 35,
@@ -1261,21 +1246,6 @@
    "permissions": false,
    "coop": false,
    "no_leak": false
-  },
-  {
-   "domain": "anthropic.com",
-   "category": "tech",
-   "score": 30,
-   "grade": "F",
-   "http_code": 200,
-   "hsts": false,
-   "csp": false,
-   "xcto": true,
-   "frame": true,
-   "referrer": false,
-   "permissions": false,
-   "coop": false,
-   "no_leak": true
   },
   {
    "domain": "lastampa.it",
@@ -1343,6 +1313,21 @@
    "score": 25,
    "grade": "F",
    "http_code": 403,
+   "hsts": true,
+   "csp": false,
+   "xcto": false,
+   "frame": false,
+   "referrer": false,
+   "permissions": false,
+   "coop": false,
+   "no_leak": true
+  },
+  {
+   "domain": "ionos.de",
+   "category": "host",
+   "score": 25,
+   "grade": "F",
+   "http_code": 206,
    "hsts": true,
    "csp": false,
    "xcto": false,
