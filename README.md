@@ -202,7 +202,7 @@ The numbers behind the two rankings, measured weekly from public DNS and HTTP he
 - [HTTP security headers: HSTS, CSP, COOP](https://daniele-michelin.com/data/header-ranking.csv) (CSV) · [JSON](https://daniele-michelin.com/data/header-ranking.json)
 - [All open data](https://daniele-michelin.com/en/open-data/) — scan date, column definitions, suggested citation
 
-The same files live in [`data/`](data/) in this repo. Rows: 102 domains (mail), 97 sites (headers), 627 versions (EOL), 149 error messages (lexicon).
+The same files live in [`data/`](data/) in this repo. Rows: 102 domains (mail), 97 sites (headers), 632 versions (EOL), 149 error messages (lexicon).
 
 ## License
 
