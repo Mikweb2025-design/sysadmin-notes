@@ -1,12 +1,12 @@
 {
- "name": "HTTP security header ranking: HSTS, CSP and COOP of 97 sites",
+ "name": "HTTP security header ranking: HSTS, CSP and COOP of 98 sites",
  "description": "Which sites send the security headers that prevent sniffing, framing and injection.",
  "url": "https://daniele-michelin.com/en/header-ranking/",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "attribution": "Daniele Michelin, daniele-michelin.com",
  "source": "Public DNS / HTTP headers, measured from outside",
- "scanned": "2026-11-16T05:30:16+00:00",
- "count": 97,
+ "scanned": "2026-11-23T05:30:07+00:00",
+ "count": 98,
  "columns": [
   {
    "name": "domain",
@@ -367,7 +367,7 @@
    "category": "bank",
    "score": 75,
    "grade": "B",
-   "http_code": 206,
+   "http_code": 200,
    "hsts": true,
    "csp": true,
    "xcto": true,
@@ -382,7 +382,7 @@
    "category": "shop",
    "score": 75,
    "grade": "B",
-   "http_code": 206,
+   "http_code": 200,
    "hsts": true,
    "csp": true,
    "xcto": true,
@@ -420,21 +420,6 @@
    "referrer": false,
    "permissions": false,
    "coop": false,
-   "no_leak": true
-  },
-  {
-   "domain": "openai.com",
-   "category": "tech",
-   "score": 75,
-   "grade": "B",
-   "http_code": 403,
-   "hsts": true,
-   "csp": false,
-   "xcto": true,
-   "frame": true,
-   "referrer": true,
-   "permissions": true,
-   "coop": true,
    "no_leak": true
   },
   {
@@ -637,7 +622,7 @@
    "category": "news",
    "score": 65,
    "grade": "C",
-   "http_code": 206,
+   "http_code": 200,
    "hsts": true,
    "csp": true,
    "xcto": false,
@@ -1158,6 +1143,21 @@
    "no_leak": true
   },
   {
+   "domain": "openai.com",
+   "category": "tech",
+   "score": 45,
+   "grade": "D",
+   "http_code": 206,
+   "hsts": true,
+   "csp": false,
+   "xcto": true,
+   "frame": true,
+   "referrer": false,
+   "permissions": false,
+   "coop": false,
+   "no_leak": false
+  },
+  {
    "domain": "rai.it",
    "category": "news",
    "score": 45,
@@ -1190,6 +1190,21 @@
   {
    "domain": "mediamarkt.de",
    "category": "shop",
+   "score": 40,
+   "grade": "D",
+   "http_code": 200,
+   "hsts": true,
+   "csp": false,
+   "xcto": false,
+   "frame": true,
+   "referrer": false,
+   "permissions": false,
+   "coop": false,
+   "no_leak": true
+  },
+  {
+   "domain": "register.it",
+   "category": "host",
    "score": 40,
    "grade": "D",
    "http_code": 200,

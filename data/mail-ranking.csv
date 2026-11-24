@@ -92,6 +92,7 @@ sueddeutsche.de,sueddeutsche.de,news,de,55,C,none,-all,True,True,True,True,False
 heise.de,heise.de,news,de,53,D,none,~all,True,True,False,True,False,True,False
 ilsole24ore.com,ilsole24ore.com,news,it,53,D,none,~all,True,True,False,True,False,True,False
 lastampa.it,lastampa.it,news,it,53,D,none,~all,True,True,False,True,False,True,False
+register.it,register.it,host,it,53,D,none,~all,True,True,False,True,False,True,False
 trenitalia.com,trenitalia.com,shop,it,53,D,none,~all,True,True,False,True,False,True,False
 zeit.de,zeit.de,news,de,48,D,none,~all,True,True,False,True,False,False,False
 europa.eu,europa.eu,gov,world,35,D,-,-all,True,True,True,False,False,False,False
@@ -99,5 +100,4 @@ faz.net,faz.net,news,world,35,D,-,-all,True,True,True,False,False,False,False
 mediolanum.com,mediolanum.com,bank,it,35,D,-,-all,True,True,True,False,False,False,False
 tim.it,tim.it,host,it,28,F,-,~all,True,True,False,False,False,False,False
 gov.it,gov.it,gov,it,0,F,-,-,True,False,False,False,False,False,False
-register.it,register.it,host,it,0,F,-,-,True,False,False,False,False,False,False
 volksbank.de,volksbank.de,bank,de,0,F,-,-,True,False,False,False,False,False,False

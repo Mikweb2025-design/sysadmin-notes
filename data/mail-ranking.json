@@ -5,7 +5,7 @@
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "attribution": "Daniele Michelin, daniele-michelin.com",
  "source": "Public DNS / HTTP headers, measured from outside",
- "scanned": "2026-11-16T05:30:44+00:00",
+ "scanned": "2026-11-23T05:30:12+00:00",
  "count": 102,
  "columns": [
   {
@@ -1652,6 +1652,23 @@
    "sts": false
   },
   {
+   "domain": "register.it",
+   "mail_domain": "register.it",
+   "category": "host",
+   "country": "it",
+   "score": 53,
+   "grade": "D",
+   "dmarc_policy": "none",
+   "spf_all": "~all",
+   "spf_single_record": true,
+   "spf": true,
+   "spf_strict": false,
+   "dmarc": true,
+   "reject": false,
+   "rua": true,
+   "sts": false
+  },
+  {
    "domain": "trenitalia.com",
    "mail_domain": "trenitalia.com",
    "category": "shop",
@@ -1757,23 +1774,6 @@
    "domain": "gov.it",
    "mail_domain": "gov.it",
    "category": "gov",
-   "country": "it",
-   "score": 0,
-   "grade": "F",
-   "dmarc_policy": "-",
-   "spf_all": "-",
-   "spf_single_record": true,
-   "spf": false,
-   "spf_strict": false,
-   "dmarc": false,
-   "reject": false,
-   "rua": false,
-   "sts": false
-  },
-  {
-   "domain": "register.it",
-   "mail_domain": "register.it",
-   "category": "host",
    "country": "it",
    "score": 0,
    "grade": "F",

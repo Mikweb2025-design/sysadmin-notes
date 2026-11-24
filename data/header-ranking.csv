@@ -19,11 +19,10 @@ stripe.com,tech,80,B,200,True,True,True,True,False,False,True,True
 tiktok.com,social,80,B,200,True,True,True,True,True,False,False,False
 vodafone.it,host,80,B,206,True,True,True,True,True,False,False,False
 cloudflare.com,tech,75,B,200,True,False,True,True,True,True,True,True
-consorsbank.de,bank,75,B,206,True,True,True,True,False,False,False,True
-deutschebahn.com,shop,75,B,206,True,True,True,True,False,False,False,True
+consorsbank.de,bank,75,B,200,True,True,True,True,False,False,False,True
+deutschebahn.com,shop,75,B,200,True,True,True,True,False,False,False,True
 faz.net,news,75,B,200,True,False,True,True,True,True,True,True
 mps.it,bank,75,B,200,True,True,True,True,False,False,False,True
-openai.com,tech,75,B,403,True,False,True,True,True,True,True,True
 otto.de,shop,75,B,206,True,True,True,True,False,False,False,True
 rewe.de,shop,75,B,403,True,False,True,True,True,True,True,True
 spotify.com,shop,75,B,200,True,True,True,True,False,False,False,True
@@ -37,7 +36,7 @@ postbank.de,bank,70,C,206,True,False,True,True,True,True,False,True
 sparkasse.de,bank,70,C,200,True,False,True,True,True,True,False,True
 web.de,host,70,C,200,True,False,True,True,True,True,False,True
 agid.gov.it,gov,65,C,206,False,True,True,True,True,False,False,True
-ansa.it,news,65,C,206,True,True,False,True,False,False,False,True
+ansa.it,news,65,C,200,True,True,False,True,False,False,False,True
 dropbox.com,tech,65,C,200,True,False,True,True,True,False,True,True
 mozilla.org,tech,65,C,206,True,False,True,True,True,False,True,True
 spiegel.de,news,65,C,206,True,True,False,True,False,False,False,True
@@ -72,9 +71,11 @@ reddit.com,social,50,D,403,True,False,True,True,False,False,False,True
 usa.gov,gov,50,D,206,True,False,True,True,False,False,False,True
 fineco.it,bank,45,D,206,True,False,True,True,False,False,False,False
 iliad.it,host,45,D,200,False,True,False,True,False,False,False,True
+openai.com,tech,45,D,206,True,False,True,True,False,False,False,False
 rai.it,news,45,D,200,True,False,True,False,True,False,False,True
 intesasanpaolo.com,bank,40,D,206,True,False,False,True,False,False,False,True
 mediamarkt.de,shop,40,D,200,True,False,False,True,False,False,False,True
+register.it,host,40,D,200,True,False,False,True,False,False,False,True
 bundesregierung.de,gov,35,D,206,True,False,True,False,False,False,False,True
 strato.de,host,35,D,206,True,False,False,True,False,False,False,False
 telegram.org,social,35,D,200,True,False,False,True,False,False,False,False
